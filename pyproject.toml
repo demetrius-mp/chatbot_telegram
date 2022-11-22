@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "chatbot-telegram"
+version = "0.1.0"
+description = ""
+authors = ["Demetrius Panovitch <demetrius.mp789@gmail.com>"]
+readme = "README.md"
+packages = [{include = "chatbot_telegram"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-telegram-bot = "20.0a5"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+isort = "^5.10.1"
+flake8 = "^5.0.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
