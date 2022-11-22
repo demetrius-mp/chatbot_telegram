@@ -9,6 +9,8 @@ packages = [{include = "chatbot_telegram"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 python-telegram-bot = "20.0a5"
+python-dotenv = "^0.21.0"
+transformers = "^4.24.0"
 
 
 [tool.poetry.group.dev.dependencies]
