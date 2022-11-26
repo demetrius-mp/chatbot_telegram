@@ -25,7 +25,22 @@ async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def classify(update: Update, context: ContextTypes.DEFAULT_TYPE):
     intencao = make_prediction(update.message.text)
 
-    await update.message.reply_text(f"Você quer {intencao}")
+    if intencao == "ver_cardapio":
+        await update.message.reply_text("Certo, você quer o cardápio.")
+        await update.message.reply_text(
+            "No momento não consigo te enviar o cardápio, mas se quiser, pode fazer seu pedido e eu te digo se temos em estoque ou não."  # noqa
+        )
+
+    if intencao == "fazer_pedido":
+        await update.message.reply_text("Opa, parece que você quer fazer seu pedido.")
+        await update.message.reply_text(
+            "Estarei encaminhando os itens do seu pedido para um de nossos colaboradores."  # noqa
+        )
+
+    if intencao == "fechar_conta":
+        await update.message.reply_text("Beleza, vamos fechar a sua conta então.")
+        await update.message.reply_text("O valor total da sua conta foi de 0.007 BTC.")
+        await update.message.reply_text("Agradecemos sua atenção, até a proxima!")
 
 
 handle_start = CommandHandler("start", start)
